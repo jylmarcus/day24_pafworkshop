@@ -1,5 +1,7 @@
 package paf.visa.day24_pafworkshop.service;
 
+import java.sql.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +17,7 @@ public class OrderService {
 
     @Transactional
     public boolean createOrder(Order order) {
+        order.setOrderDate(new Date(System.currentTimeMillis()));
         if(!orderRepository.createOrder(order) || !orderRepository.createOrderDetails(order)) {
             throw new UnableToCreateOrderException("Incorrect parameters");
         }
