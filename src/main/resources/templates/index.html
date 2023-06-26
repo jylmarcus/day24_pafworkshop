@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create order</title>
+</head>
+<body>
+    <form th:action="@{/order}" th:object="${orderForm}">
+        <label for="customerName">Name: </label>
+        <input type="text" th:field="*{customerName}">
+        <label for="shipAddress">Address: </label>
+        <input type="text" th:field="*{shipAddress}">
+        <label for="notes">Comments:</label>
+        <textarea name="notes" id="" cols="30" rows="10" th:field="*{notes}"></textarea>
+        <label for="tax">Tax percentage:</label>
+        <input type="text" th:field="*{tax}">
+        <label for="productName">Product Name: </label>
+        <input type="text" th:field="*{productName}">
+        <label for="unitPrice">Product Price: </label>
+        <input type="text" th:field="*{unitPrice}">
+        <label for="discount">Product Price rate: </label>
+        <input type="text" th:field="*{discount}">
+        <label for="quantity">Quantity: </label>
+        <input type="number" th:field="*{quantity}">
+    </form>
+</body>
+</html>
