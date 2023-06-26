@@ -8,16 +8,16 @@
 </head>
 <body th:object="${errorMessage}">
     <label for="statusCode">Status Code</label>
-    <span th:text="${errorMessage.statusCode}"></span>
+    <span th:text="${statusCode}"></span>
     <br />
     <label for="timeStamp">Timestamp of occurence</label>
-    <span th:text="${errorMessage.timeStamp}"></span>
+    <span th:text="${timeStamp}"></span>
     <br />
     <label for="message">Message</label>
-    <span th:text="${errorMessage.message}"></span>
+    <span th:text="${message}"></span>
     <br />
     <label for="description">Description</label>
-    <span th:text="${errorMessage.description}"></span>
+    <span th:text="${description}"></span>
     <br />
 </body>
 </html>

@@ -17,13 +17,14 @@ public class OrderService {
 
     @Transactional
     public boolean createOrder(Order order) {
+        System.out.println(order.getUnitPrice());
         order.setOrderDate(new Date(System.currentTimeMillis()));
-        if(!orderRepository.createOrder(order) || !orderRepository.createOrderDetails(order)) {
+        if(!(orderRepository.createOrder(order)[0] > 0) || !orderRepository.createOrderDetails(order, orderRepository.createOrder(order)[1])) {
             throw new UnableToCreateOrderException("Incorrect parameters");
         }
-
-        orderRepository.createOrder(order);
-        orderRepository.createOrderDetails(order);
+        
+        Integer orderId = orderRepository.createOrder(order)[1];
+        orderRepository.createOrderDetails(order, orderId);
 
         return true;
     }

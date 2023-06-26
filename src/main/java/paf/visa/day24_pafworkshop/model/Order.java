@@ -18,7 +18,7 @@ public class Order implements Serializable{
     private String notes;
     private Float tax;
     private String productName;
-    private Float unitPrice;
+    private Double unitPrice;
     private Float discount;
     private Integer quantity;
 }

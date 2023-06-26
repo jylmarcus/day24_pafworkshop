@@ -3,7 +3,7 @@ package paf.visa.day24_pafworkshop.exception;
 import java.util.Date;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 @ControllerAdvice
 public class GlobalExceptionHandler {
    
+    @ExceptionHandler(UnableToCreateOrderException.class)
     public ModelAndView handleUnableToCreateOrderException(UnableToCreateOrderException ex, HttpServletRequest request) {
         ErrorMessage errMsg = new ErrorMessage();
         errMsg.setStatusCode(400);

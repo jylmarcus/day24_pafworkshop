@@ -7,23 +7,32 @@
     <title>Create order</title>
 </head>
 <body>
-    <form th:action="@{/order}" th:object="${orderForm}">
+    <form th:action="@{/order}" th:object="${orderForm}" method="post">
         <label for="customerName">Name: </label>
         <input type="text" th:field="*{customerName}">
+        <br>
         <label for="shipAddress">Address: </label>
         <input type="text" th:field="*{shipAddress}">
+        <br>
         <label for="notes">Comments:</label>
         <textarea name="notes" id="" cols="30" rows="10" th:field="*{notes}"></textarea>
+        <br>
         <label for="tax">Tax percentage:</label>
         <input type="text" th:field="*{tax}">
+        <br>
         <label for="productName">Product Name: </label>
         <input type="text" th:field="*{productName}">
+        <br>
         <label for="unitPrice">Product Price: </label>
         <input type="text" th:field="*{unitPrice}">
+        <br>
         <label for="discount">Product Price rate: </label>
         <input type="text" th:field="*{discount}">
+        <br>
         <label for="quantity">Quantity: </label>
         <input type="number" th:field="*{quantity}">
+        <br>
+        <button type="Submit">Submit</button>
     </form>
 </body>
 </html>
